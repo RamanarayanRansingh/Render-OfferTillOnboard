@@ -35,7 +35,7 @@ We’ve ditched guesswork for good! Our predictive model is like a crystal ball 
 
 | Metric | Score | Plain English |
 |--------|-------|---------------|
-| Accuracy | 82.30% | More accurate than your daily horoscope! |
+| Accuracy | 82.30% | We're more accurate than your last guess on when your pizza will arrive! |
 | ROC AUC | 0.749 | We can almost predict the future! |
 | F1 Score | 0.349 | Balancing precision and recall like a pro! |
 
@@ -46,33 +46,11 @@ Starring in our predictive model:
 - **Job Role**: A strong supporting role.
 - **Previous Experience**: The industry veteran.
 
-## 🚀 Ready to Deploy on Render? Here’s How!
+## 🚀 Ready to See It in Action?
 
-1. Clone the repository:
+Check out the live app deployed on Render:
 
-    ```bash
-    git clone https://github.com/your-username/offer-till-on-board.git
-    cd offer-till-on-board
-    ```
-
-2. Set up your virtual environment:
-
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    pip install -r requirements.txt
-    ```
-
-3. Run the Flask app locally:
-
-    ```bash
-    flask run
-    ```
-
-4. Ready for Render? Here’s what you need to deploy the Flask app:
-    - Connect the repository to Render.
-    - Create a new Web Service.
-    - Use `app.py` as the entry point.
+👉 [Offer Till On Board](https://offer-till-onboard.onrender.com)
 
 ## 🗂️ Project Structure
 
@@ -88,13 +66,6 @@ Starring in our predictive model:
 - `📄 requirements.txt`: Python dependencies for the project.
 - `📜 LICENSE`: Open-source MIT License for the project.
 
-## 🔮 Render Deployment Steps
-
-1. Sign in to [Render](https://render.com/).
-2. Link this GitHub repository to Render.
-3. Configure the web service settings (select `app.py` as the entry point).
-4. Watch your Flask app come to life!
-
 ## 🤝 Contribute and Collaborate
 
 Got an idea to improve this Flask-powered predictor? Fork it, make a pull request, or open an issue. Together, we can make candidate ghosting a thing of the past.
@@ -105,10 +76,10 @@ Got an idea to improve this Flask-powered predictor? Fork it, make a pull reques
 - 📜 Added LICENSE.md.
 - 🖼️ Updated banner design.
 - ⚙️ Implemented Flask-based prediction API.
-- 🚀 Prepared the project for deployment on Render.
+- 🚀 Deployed on Render.
 
 ---
 
 Built with 💻, ☕, and Flask by a Solo Data Wizard
 
-In the battle against candidate ghosting, **Data** is your secret weapon! 👻🚫
+In the battle against candidate ghosting, **Flask + Data** is your secret weapon! 👻🚫
