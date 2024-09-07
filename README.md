@@ -41,10 +41,14 @@ We’ve ditched guesswork for good! Our predictive model is like a crystal ball 
 
 ## 🎭 Key Predictive Features
 
-Starring in our predictive model:
-- **Interview Performance**: Top billing!
-- **Job Role**: A strong supporting role.
-- **Previous Experience**: The industry veteran.
+These factors play a crucial role in our prediction:
+
+- **Candidate_relocate_actual**: Whether relocating is required or not.
+- **Candidate_Source**: How the candidate applied or reached the company.
+- **LOB**: Line of Business the candidate is applying for.
+- **Notice_Period**: Notice period from the candidate's previous employer.
+- **DOJ_Extended**: Whether the Date of Joining was extended.
+- **Duration_to_accept_offer**: The time it took for the candidate to accept the offer.
 
 ## 🚀 Ready to See It in Action?
 
