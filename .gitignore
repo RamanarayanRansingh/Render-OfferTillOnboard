@@ -1,0 +1,7 @@
+# Ignore virtual environments, IDE files, and other unnecessary files
+myenv
+.idea/
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offer Till On Board: Prediction Tool</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Offer Till On Board: Prediction Tool</h1>
+      <form id="prediction-form">
+        <div class="form-group">
+          <label for="DOJ_Extended">DOJ Extended:</label>
+          <select name="DOJ_Extended" id="DOJ_Extended" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Duration_to_accept_offer"
+            >Duration to Accept Offer (days):</label
+          >
+          <input
+            type="number"
+            name="Duration_to_accept_offer"
+            id="Duration_to_accept_offer"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Notice_Period">Notice Period (days):</label>
+          <input
+            type="number"
+            name="Notice_Period"
+            id="Notice_Period"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Offered_Band">Offered Band:</label>
+          <select name="Offered_Band" id="Offered_Band" required>
+            <option value="E1">E1</option>
+            <option value="E2">E2</option>
+            <option value="E3">E3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Percent_hike_expected_in_CTC"
+            >Percent Hike Expected in CTC:</label
+          >
+          <input
+            type="number"
+            name="Percent_hike_expected_in_CTC"
+            id="Percent_hike_expected_in_CTC"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Percent_difference_CTC">Percent Difference in CTC:</label>
+          <input
+            type="number"
+            name="Percent_difference_CTC"
+            id="Percent_difference_CTC"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Joining_Bonus">Joining Bonus:</label>
+          <select name="Joining_Bonus" id="Joining_Bonus" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Candidate_relocate_actual">Candidate Relocate:</label>
+          <select
+            name="Candidate_relocate_actual"
+            id="Candidate_relocate_actual"
+            required
+          >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Gender">Gender:</label>
+          <select name="Gender" id="Gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Candidate_Source">Candidate Source:</label>
+          <select name="Candidate_Source" id="Candidate_Source" required>
+            <option value="Direct">Direct</option>
+            <option value="Employee Referral">Employee Referral</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="LOB">Line of Business (LOB):</label>
+          <select name="LOB" id="LOB" required>
+            <option value="ERS">ERS</option>
+            <option value="CSMP">CSMP</option>
+            <option value="BFSI">BFSI</option>
+            <option value="EAS">EAS</option>
+            <option value="INFRA">INFRA</option>
+            <option value="ETS">ETS</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Location">Location:</label>
+          <select name="Location" id="Location" required>
+            <option value="Noida">Noida</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Gurgaon">Gurgaon</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Region_Name">Region Name:</label>
+          <select name="Region_Name" id="Region_Name" required>
+            <option value="North">North</option>
+            <option value="South">South</option>
+            <option value="West">West</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Domicile_Name">Domicile Name:</label>
+          <select name="Domicile_Name" id="Domicile_Name" required>
+            <option value="Goa">Goa</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Delhi">Delhi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Age">Age:</label>
+          <input type="number" name="Age" id="Age" required />
+        </div>
+        <button type="submit" class="submit-btn">Predict</button>
+      </form>
+      <div id="result" class="result-hidden">
+        <h2>Prediction Result:</h2>
+        <p id="prediction-result"></p>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
