@@ -3,8 +3,8 @@ import pandas as pd
 import joblib
 
 # Load the model, scaler, and columns
-model = joblib.load('models/xgb_tunedv2.pkl')
-scaler = joblib.load('scalers/scaler.pkl')
+model = joblib.load('models/xgb_tunedv3.pkl')
+scaler = joblib.load('models/scaler.pkl')
 columns = joblib.load('models/columns.pkl')
 
 # Preprocessing function
@@ -34,27 +34,27 @@ def preprocess_input(input_data):
 def make_prediction(input_data):
     processed_input = preprocess_input(input_data)
     prediction = model.predict(processed_input)
-    return "Yes" if prediction[0] == 1 else "No"
+    return "Yes" if prediction[0] == 0 else "No"
 
 # Gradio interface function
 def inference_page():
     with gr.Blocks() as demo:
         # Define inputs
         DOJ_Extended = gr.Dropdown(choices=["Yes", "No"], label="DOJ Extended")
-        Duration_to_accept_offer = gr.Slider(minimum=0, maximum=100, label="Duration to Accept Offer (days)")
-        Notice_Period = gr.Slider(minimum=0, maximum=90, label="Notice Period (days)")
-        Offered_Band = gr.Dropdown(choices=["E1", "E2", "E3"], label="Offered Band")
-        Percent_hike_expected_in_CTC = gr.Slider(minimum=0, maximum=100, label="Percent Hike Expected in CTC")
-        Percent_difference_CTC = gr.Slider(minimum=-50, maximum=50, label="Percent Difference in CTC")
+        Duration_to_accept_offer = gr.Slider(minimum=0, maximum=224, label="Duration to Accept Offer (days)")
+        Notice_Period = gr.Slider(minimum=0, maximum=120, label="Notice Period (days)")
+        Offered_Band = gr.Dropdown(choices=["E1", "E2", "E3", "E4"], label="Offered Band")
+        Percent_hike_expected_in_CTC = gr.Slider(minimum=-68, maximum=359, label="Percent Hike Expected in CTC")
+        Percent_difference_CTC = gr.Slider(minimum=-67, maximum=300, label="Percent Difference in CTC")
         Joining_Bonus = gr.Dropdown(choices=["Yes", "No"], label="Joining Bonus")
         Candidate_relocate_actual = gr.Dropdown(choices=["Yes", "No"], label="Candidate Relocate")
         Gender = gr.Dropdown(choices=["Male", "Female"], label="Gender")
-        Candidate_Source = gr.Dropdown(choices=["Direct", "Employee Referral"], label="Candidate Source")
-        LOB = gr.Dropdown(choices=["ERS", "CSMP", "BFSI", "EAS", "INFRA", "ETS"], label="Line of Business (LOB)")
-        Location = gr.Dropdown(choices=["Noida", "Chennai", "Mumbai", "Hyderabad", "Kolkata", "Gurgaon"], label="Location")
-        Region_Name = gr.Dropdown(choices=["North", "South", "West"], label="Region Name")
-        Domicile_Name = gr.Dropdown(choices=["Goa", "Himachal Pradesh", "Jharkhand", "Tripura", "Punjab", "Delhi"], label="Domicile Name")
-        Age = gr.Slider(minimum=18, maximum=65, label="Age")
+        Candidate_Source = gr.Dropdown(choices=["Direct", "Employee Referral", "Agency"], label="Candidate Source")
+        LOB = gr.Dropdown(choices=["ERS", "INFRA", "Healthcare", "BFSI", "CSMP", "ETS", "AXON", "EAS", "MMS"], label="Line of Business (LOB)")
+        Location = gr.Dropdown(choices=["Noida", "Chennai", "Mumbai", "Hyderabad", "Kolkata", "Gurgaon", "Bangalore", "Cochin", "Pune", "Ahmedabad"], label="Location")
+        Region_Name = gr.Dropdown(choices=["North", "South", "East", "West"], label="Region Name")
+        Domicile_Name = gr.Dropdown(choices=["Andhra Pradesh", "Bihar", "Chandigarh", "Chhattisgarh", "Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Odisha", "Punjab", "Rajasthan", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarkhand", "West Bengal"], label="Domicile Name")
+        Age = gr.Slider(minimum=20, maximum=60, label="Age")
         
         # Prediction button and result output
         predict_button = gr.Button("Predict")

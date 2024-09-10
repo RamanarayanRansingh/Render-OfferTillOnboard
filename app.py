@@ -5,8 +5,8 @@ import joblib
 app = Flask(__name__)
 
 # Load the model, scaler, and columns
-model = joblib.load('models/xgb_tunedv2.pkl')
-scaler = joblib.load('scalers/scaler.pkl')
+model = joblib.load('models/xgb_tunedv3.pkl')
+scaler = joblib.load('models/scaler.pkl')
 columns = joblib.load('models/columns.pkl')
 
 def preprocess_input(input_data):
@@ -34,7 +34,7 @@ def preprocess_input(input_data):
 def make_prediction(input_data):
     processed_input = preprocess_input(input_data)
     prediction = model.predict(processed_input)
-    return "Will Join" if prediction[0] == 1 else "May Not Join"
+    return "Will Join" if prediction[0] == 0 else "May Not Join"
 
 @app.route('/')
 def home():
